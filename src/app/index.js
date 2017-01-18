@@ -4,7 +4,7 @@
     angular.module('singApp', [
         'singApp.core',
         'singApp.dashboard',
-        'singApp.another',
+        'singApp.orders',
         'singApp.profile',
         'singApp.login',
         'singApp.error'

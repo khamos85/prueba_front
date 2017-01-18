@@ -54,7 +54,23 @@
        * whether navigation is static (prevent automatic collapsing)
        */
       'nav-static': false
-    }
+    },
+      firstName: 'Vincent',
+      lastName: 'Soto',
+      position: 'Etiam phasellus.',
+      phone: '(310) 961-1376',
+      email: 'Vincent.SOT3955@yahoo.com',
+      city: 'New Orleans',
+      country: 'United States',
+      skills:    [
+        {'skill':'AngularJS', 'color':'warning'},
+        {'skill':'jQuery', 'color':'success' },
+        {'skill':'Bootstrap', 'color':'primary'},
+      ],
+      about: 'Lorem ipsum nam interdum leo congue hac, diam at sollicitudin. Lorem ipsum felis elementum consectetur facilisis cras commodo auctor elit! Lorem ipsum justo conubia cursus imperdiet iaculis ut a vitae. Lorem ipsum nullam ad consequat neque pulvinar senectus facilisis non. \\n',
+      posts: 358523,
+      conversion: 68.99,
+      followers: 570689
   };
 
   configFactory.$inject = ['jQuery', '$window', '$timeout', '$log'];

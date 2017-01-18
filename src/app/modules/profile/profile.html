@@ -1,8 +1,53 @@
+<style type="text/css">
+  .post-user-profile .contacts {
+  display: block;
+  margin-top: 25px;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 0;
+  text-align: center
+}
+
+.post-user-profile .contacts>li {
+  display: inline-block;
+  line-height: 2.2;
+  list-style: none;
+  text-align: left;
+  margin: 0 10px
+}
+
+@media (min-width:992px) {
+  .post-user-profile .contacts>li {
+    width: 150px;
+    white-space: nowrap
+  }
+}
+
+.post-user-profile .contacts>li>a {
+  color: #a2a2a2;
+  text-decoration: none
+}
+
+.post-user-profile .contacts>li>a:focus,
+.post-user-profile .contacts>li>a:hover {
+  color: #555
+}
+
+.post-user-profile .contacts .fa {
+  font-size: 18px;
+  vertical-align: middle
+}
+
+.post-links {
+  list-style: none;
+}
+</style>
+
 <ol class="breadcrumb">
   <li>Usted esta aqui</li>
   <li class="active">Perfil</li>
 </ol>
-<h1 class="page-title">Perfil - <span class="fw-semi-bold">Marlon</span></h1>
+<h1 class="page-title">Perfil - <span class="fw-semi-bold">{{app.firstName}} {{app.lastName}}</span></h1>
 <div class="row profile">
   <div class="col-md-6">
     <section class="widget">
@@ -14,8 +59,8 @@
           <div class="btn-toolbar">
             <a href="#" class="btn btn-outline btn-sm pull-right">
               <i class="fa fa-twitter mr-xs"></i>
-              Segir
-            </a>
+              Seguir
+            </a> 
           </div>
         </div>
         <div class="row">
@@ -24,45 +69,42 @@
               <span class="thumb-xlg">
                 <img class="img-circle" src="assets/images/people/a5.jpg" alt="...">
               </span>
-              <h4 class="fw-normal">Marlon <span class="fw-semi-bold">Cepeda</span></h4>
-              <p>CTO Tiendosqui</p>
+              <h4 class="fw-normal">{{app.firstName}} <span class="fw-semi-bold">{{app.secondName}}</span></h4>
+              <p>{{app.position}}</p>
               <a href="#" class="btn btn-danger btn-sm mt">
                 &nbsp;Send
                 <i class="fa fa-envelope ml-xs"></i>&nbsp;
               </a>
               <ul class="contacts">
-                <li><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> +375 29 555-55-55</a></li>
-                <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="#"> psmith@example.com</a></li>
-                <li><i class="fa fa-map-marker fa-fw mr-xs"></i><a href="#"> Minsk, Belarus</a></li>
+                <li><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> {{app.phone}}</a></li>
+                <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="#"> {{app.email}}</a></li>
+                <li><i class="fa fa-map-marker fa-fw mr-xs"></i><a href="#"> {{app.city}}, {{app.country}}</a></li>
               </ul>
             </div>
           </div>
           <div class="col-sm-7">
             <div class="stats-row stats-row-profile mt text-right">
               <div class="stat-item">
-                <p class="value">251</p>
+                <p class="value">{{app.posts}}</p>
                 <h5 class="name">Posts</h5>
               </div>
               <div class="stat-item">
-                <p class="value">9.38%</p>
+                <p class="value">{{app.conversion}}%</p>
                 <h5 class="name">Conversion</h5>
               </div>
               <div class="stat-item">
-                <p class="value">842</p>
+                <p class="value">{{app.followers}}</p>
                 <h5 class="name">Followers</h5>
               </div>
             </div>
             <p class="text-right mt-lg">
-              <a href="#" class="label label-warning"> UI/UX </a>
-              <a href="#" class="label label-danger ml-xs"> Web Design </a>
-              <a href="#" class="label label-default ml-xs"> Mobile Apps </a>
+              <a href="#" ng-repeat="skill in module.skills" class="label label-{{module.color}}"> {{module.skill}} </a>
             </p>
             <p class="lead mt-lg">
-              My name is Adam Johns and here is my new Sing user profile page.
+              My name is {{app.firstName}} {{app.lastName}} and here is my new <b>{{app.name}}</b> user profile page.
             </p>
             <p>
-              I love reading people's summaries page especially those who are in the same industry as me.
-              Sometimes it's much easier to find your concentration during the night.
+              {{app.about}}
             </p>
           </div>
         </div>
